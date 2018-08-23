@@ -8,37 +8,29 @@ namespace Algorithms
 {
     public static class SelectionSort
     {
-        public static int[] Sort(int[] array)
+        public static void Sort(ref int[] array)
         {
-            List<int> list = array.ToList();
-            List<int> newList = new List<int>();
-            int arrayLength = array.Length;
-            int smallestIndex;
-            
-            for (int i = 0; i < arrayLength; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                smallestIndex = SmallestIndex(list);
-                newList.Add(list[smallestIndex]);
-                list.RemoveAt(smallestIndex);
-            }
+                int minIndex = i;
 
-            return newList.ToArray();
-        }
-
-        private static int SmallestIndex(List<int> list)
-        {
-            int smallest = list[0];
-            int smallestIndex = 0;
-
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list[i] < smallest)
+                for (int j = i + 1; j < array.Length; j++)
                 {
-                    smallest = list[i];
-                    smallestIndex = i;
+                    if (array[j] < array[minIndex])
+                    {
+                        minIndex = j;
+                    }
+                }
+
+                if (minIndex != i)
+                {
+                    int temp = array[i];
+                    array[i] = array[minIndex];
+                    array[minIndex] = temp;
                 }
             }
-            return smallestIndex;
         }
+
+
     }
 }

@@ -12,20 +12,8 @@ namespace Algorithms
         {
             int[] array = { 7, 6, 5, 4, 3, -5, 1, 0 };
 
-            //QuickSort.Sort(ref array, 0, array.Length - 1);
-            InsertionSort.Sort(ref array);
-
-            //var sortedArray = SelectionSort.Sort(array);
-
-            //Console.WriteLine(BinarySearch.Search(array, 5));
-
-           //Comment to test remote repository
-
-
-            //foreach (int i in array)
-            //{
-            //    Console.WriteLine(i);
-            //}
+            //InsertionSort.Sort(ref array);
+            SelectionSort.Sort(ref array);
 
             Console.ReadKey();
         }

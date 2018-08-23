@@ -10,8 +10,7 @@ namespace Algorithms
     {
         public static void Sort(ref int[] array)
         {
-            int key;
-            int i;
+            int key,i;
             for (var j = 1; j < array.Length; j++)
             {
                 key = array[j];
